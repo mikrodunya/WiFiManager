@@ -184,11 +184,12 @@ boolean WiFiManager::autoConnect(char const *apName, char const *apPassword) {
 }
 
 boolean WiFiManager::configPortalHasTimeout(){
-    if(_configPortalTimeout == 0 || wifi_softap_get_station_num() > 0){
-      _configPortalStart = millis(); // kludge, bump configportal start time to skew timeouts
-      return false;
-    }
-    return (millis() > _configPortalStart + _configPortalTimeout);
+    //if(_configPortalTimeout == 0 || wifi_softap_get_station_num() > 0){
+    //  _configPortalStart = millis(); // kludge, bump configportal start time to skew timeouts
+    //  return false;
+   // }
+  //  return (millis() > _configPortalStart + _configPortalTimeout);
+   return (millis() >  _configPortalTimeout); //yukarıdakileri açarsan bu satırı yorum yap.
 }
 
 boolean WiFiManager::startConfigPortal() {
